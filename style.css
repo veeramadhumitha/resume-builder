@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resume</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f0f2f5;
+      color: #222;
+    }
+
+    .resume {
+      width: 800px;
+      margin: auto;
+      padding: 30px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      display: none; /* fade-in later */
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .profile-pic {
+      width: 100px;
+      height: 120px;
+      object-fit: cover;
+      margin-right: 20px;
+      border-radius: 8px;
+      border: 2px solid #666;
+      transition: transform 0.3s;
+    }
+
+    .profile-pic:hover {
+      transform: scale(1.05);
+    }
+
+    .contact-info h1 {
+      margin: 0;
+      font-size: 26px;
+      font-weight: 600;
+    }
+
+    .contact-info p {
+      margin: 4px 0;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .section {
+      margin-top: 30px;
+    }
+
+    h2 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #333;
+      border-bottom: 2px solid #667eea;
+      padding-bottom: 5px;
+      display: inline-block;
+    }
+
+    .columns {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .left-col, .right-col {
+      flex: 1 1 48%;
+    }
+
+    ul {
+      margin: 10px 0;
+      padding-left: 20px;
+    }
+
+    li {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    hr {
+      margin: 25px 0;
+      border: none;
+      border-top: 1px dashed #ccc;
+    }
+  </style>
+
+  <script>
+    $(document).ready(function () {
+      // Fade in resume content on load
+      $('.resume').fadeIn(1000);
+
+      // Optional: Scroll reveal for sections
+      $(window).on('scroll', function () {
+        $('.section').each(function () {
+          if ($(this).offset().top < $(window).scrollTop() + $(window).height() - 100) {
+            $(this).animate({ opacity: 1, marginTop: '0px' }, 600);
+          }
+        });
+      });
+
+      // Initial section styling
+      $('.section').css({ opacity: 0, marginTop: '30px' });
+    });
+  </script>
+</head>
+
+<body>
+
+  <div class="resume">
+    <div class="header">
+      <img src="your-image.jpg" alt="Profile" class="profile-pic" />
+      <div class="contact-info">
+        <h1>Your Name</h1>
+        <p>Email: example@mail.com</p>
+        <p>Phone: 123-456-7890</p>
+        <p>Location: City, Country</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Education</h2>
+      <ul>
+        <li>B.Sc. in Computer Science, XYZ University (2020–2023)</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Skills</h2>
+      <div class="columns">
+        <div class="left-col">
+          <ul>
+            <li>HTML, CSS, JavaScript</li>
+            <li>PHP & MySQL</li>
+          </ul>
+        </div>
+        <div class="right-col">
+          <ul>
+            <li>jQuery & Bootstrap</li>
+            <li>Git & GitHub</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add more sections as needed -->
+    <hr>
+  </div>
+
+</body>
+</html>
